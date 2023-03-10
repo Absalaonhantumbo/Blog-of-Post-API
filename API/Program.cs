@@ -46,7 +46,7 @@ builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 builder.Services.AddScoped<IUserAccessor, UserAccessor>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
-var secretKey =  builder.Configuration.GetSection("SecretKey").Value;
+var secretKey =  builder.Configuration.GetSection("Token:key").Value;
 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opt =>

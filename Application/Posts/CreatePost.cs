@@ -45,8 +45,7 @@ public class CreatePost
             {
                 Title = request.Title,
                 Content = request.Content,
-                ImageUrl = request.PostImage.FileName
-                ,
+                ImageUrl = request.PostImage.FileName,
                 DateCreated = DateTimeOffset.UtcNow,
                 Author = user
             };

@@ -40,7 +40,7 @@ public class AuthenticationService: IAuthenticationService
             
             //generate the token
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["SecretKey"]);
+            var key = Encoding.ASCII.GetBytes(_configuration["Token:key"]);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]

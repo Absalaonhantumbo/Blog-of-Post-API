@@ -8,6 +8,7 @@ namespace API.Controllers
     public class UsersController : BaseController
     {
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<User>>> GetAllUsers()
         {
             return await Mediator.Send(new ListUsers.ListUsersQuery ());
